@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
+  background: url("images/BG.jpg") no-repeat center center/cover;
+  background-attachment: fixed; /* keeps background still when scrolling */
+  position: relative;
+}
+
+/* Global dark overlay for both pages */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* same brightness everywhere */
+  z-index: -1; /* keeps it behind all content */
+}
+
+/* Password Screen */
+#password-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.password-box {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  max-width: 490px;
+  color: white;
+  text-align: center;
+}
+
+.password-box h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.password-box input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.password-box button {
+  padding: 10px 20px;
+  background: #ff4b5c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.password-box button:hover {
+  background: #ff2e44;
+}
+
+#error-message {
+  color: yellow;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Main Page */
+.container {
+  padding: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.intro {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin: 20px 0 10px;
+  font-size: 2rem;
+}
+
+.photos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 90px;
+}
+
+.photos img {
+  width: 280px;   /* smaller size */
+  height: auto;   /* keep aspect ratio */
+  /* border-radius: 15px; */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+
+.photos img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+}
+
+section {
+  margin: 40px 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .password-box {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .password-box h1 {
+    font-size: 1.5rem;
+  }
+
+  .password-box input,
+  .password-box button {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .photos img {
+    width: 120px; /* smaller on phones */
+    height: auto;
+  }
+}
