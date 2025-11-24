@@ -2,7 +2,7 @@
 function checkPassword() {
   const password = document.getElementById("password-input").value;
   const errorMsg = document.getElementById("error-message");
-  const correctPassword = "1"; // <<< change this to your secret password
+  const correctPassword = "painkiller"; // <<< change this to your secret password
 
   if (password === correctPassword) {
     document.getElementById("password-screen").style.display = "none";
